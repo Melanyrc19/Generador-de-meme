@@ -87,6 +87,22 @@ main .meme .texto-abajo {
 
 }
 
+.editor-de-meme{
+    padding: 15px;
+    width: 60%;
+    height: 500px;
+    background-color: rgb(69, 64, 64);
+    color: pink;
+    display: ;
+}
+#editorTexto{
+    padding: 15px;
+    width: 60%;
+    height: 500px;
+    background-color: rgb(69, 64, 64);
+    color: pink;
+    display: ;   
+}
 @media (min-width: 768px){
   .sectionArriba{
     height: 80%;

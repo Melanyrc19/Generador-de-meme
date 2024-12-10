@@ -19,9 +19,9 @@
 
         <main class="main">
             <div class="meme">
-                <div class="texto-arriba"></div>
-                <div class="imagen-meme"></div>
-                <div class="texto-abajo"></div>
+                <div class="texto-arriba" id="primerTexto"></div>
+                <div class="imagen-meme"><img  id="imagenMeme" src="" alt="meme"></div>
+                <div class="texto-abajo" id="segundoTexto"></div>
             </div>
         </main>
 
@@ -32,7 +32,86 @@
             </button>
         </section>
     </section>
+
+
+
+
     <section class="editor-de-meme">
+        <h2>IMAGEN</h2>
+
+        <div>
+            <label>URL</label>
+            <input class="" id="inputUrl" type="text" >
+        </div>
+        <div id="inputFondo">
+            <label>FONDO</label>
+            <input class="" type="radio" >
+        </div>
+        <p>FILTROS:</p>
+        <div>
+            <label>BRILLO </label>
+            <input class="" type="range" id="inputBrillo" min="0" max="1" step="0.1" >
+        </div>
+        <div>
+            <label>OPACIDAD</label>
+            <input class="" type="range"  id="inputOpacidad" min="0" max="1" step="0.1" >
+        </div>
+        <div>
+            <label>CONTRASTE </label>
+            <input class="" type="range" id="inputContraste" min="100%" max="1000%" step="1%">
+        </div>
+        <div>
+            <label>DESENFOQUE </label>
+            <input class="" type="range" id="inputDesenfoque" min="0px" max="10px" step="0.1px">
+        </div>
+        <div >
+            <label>ESCALA DE GRISES </label>
+            <input class="" type="range" id="inputEscalaDeGrises" min="0%" max="100%" step="1%">
+        </div>
+        <div >
+            <label>SEPIA </label>
+            <input class="" type="range" id="inputSepia" min="0%" max="100%" step="1%">
+        </div>
+        <div>
+            <label>HUE </label>
+            <input class="" type="range"  id="inputHue" min="0deg" max="359deg" step="1deg">
+        </div>
+        <div >
+            <label>SATURADO </label>
+            <input class="" type="range" id="inputSaturado" min="100%" max="1000%" step="10%">
+        </div>
+        <div >
+            <label>NEGATIVO</label>
+            <input class="" type="range" id="inputNegativo" min="0" max="1" step="0.1">
+        </div>
+    </section>
+
+    <section id="editorTexto">
+        <h3>TEXTO</h3>
+        <div >
+            <label>SUPERIOR </label>
+            <input class="" type="text" id="textoSuperior">
+        </div>
+        <input type="radio" id="sinTextoSuperior"> <p>sin texto superior</p>
+        
+        
+        <div >
+            <label>INFERIOR </label>
+            <input class="" type="text" id="textoInferior">
+        </div>
+        <input type="radio" id="sinTextoInferior"> <p>sin texto inferior</p>
+
+        <div >
+            <label>FUENTE </label>
+            <input type="text" id="fuente">
+        </div>
+       
+
+
+
+    
+        
+
 
 
     </section>
