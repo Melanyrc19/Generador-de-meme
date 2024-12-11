@@ -7,7 +7,7 @@ const $inputTextoInferior = $("#textoInferior")
 
 const $sinTexto1 = $("#sinTextoSuperior")
 const $sinTexto2 = $("#sinTextoInferior")
-const $inputFuente = $("#fuente")
+const $inputFuente = $("#familiaFuente")
 const $inputUrl= $("#inputUrl")
 const $inputFamilia = $("#familiaFuente")
 const $inputTamañoFuente = $("#tamañoFuente")
@@ -46,17 +46,17 @@ $h1Texto.style.display = "none";
 
 
 $inputFuente.addEventListener ("input", (e) => {
-$h1Texto.innerText =  e.target.value;
+$h1Texto.style.fontFamily =  e.target.value;
 $h1SegundoTexto.style.fontFamily =  e.target.value
 })
 
-// if ($inputUrl){
-// $inputUrl.addEventListener ("input", (e) => {
-//     $imagen.src = e.target.value});
-//     $imagen.style.maxWidth = "100%"; 
-//     $imagen.style.maxHeight = "100%"; 
-//     $imagen.style.objectFit = "contain"; 
-// }
+ if ($inputUrl){
+ $inputUrl.addEventListener ("input", (e) => {
+    $imagen.src = e.target.value});
+    $imagen.style.maxWidth = "100%"; 
+    $imagen.style.maxHeight = "100%"; 
+    $imagen.style.objectFit = "contain"; 
+}
 
 $inputTamañoFuente.addEventListener ("input", () => {
     $h1Texto.style.fontSize = $inputTamañoFuente.value + "px";
@@ -64,9 +64,8 @@ $inputTamañoFuente.addEventListener ("input", () => {
 
 })
 $inputColorTexto.addEventListener("input", (e) => {
-    $h1Texto.style.color = $inputColorTexto.value;
-    $h1SegundoTexto.style.color = $inputColorTexto.value
-})
+    $cardTexto.style.color = $inputColorTexto.value;
+   })
 
 $inputColorFondo.addEventListener ("input", () => {
     $h1Texto.style.backgroundColor = $inputColorFondo.value;
@@ -75,6 +74,17 @@ $inputColorFondo.addEventListener ("input", () => {
 
 $inputAlinearTexto.addEventListener ("input", ( ) =>{
     $cardTexto.style.textAlign = $inputAlinearTexto.value
+})
+
+
+// eventos de filtros
+
+const $inputBrillo = $ ("#inputBrillo")
+
+
+
+$inputBrillo.addEventListener("input", () =>{
+$cardTexto.style.filter = `brightness (${$inputBrillo.value})`
 })
 
 
