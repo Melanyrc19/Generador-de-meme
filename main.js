@@ -75,19 +75,13 @@ $inputColorFondo.addEventListener ("input", () => {
 $inputAlinearTexto.addEventListener ("input", ( ) =>{
     $cardTexto.style.textAlign = $inputAlinearTexto.value
 })
+// EVENTOS DE TEXTO:
+const $inputBrillo = $("#inputBrillo");
+const $contenido =$ ("#card"); // 
 
-
-// eventos de filtros
-
-const $inputBrillo = $ ("#inputBrillo")
-
-
-
-$inputBrillo.addEventListener("input", () =>{
-$cardTexto.style.filter = `brightness (${$inputBrillo.value})`
-})
-
-
+$inputBrillo.addEventListener("input", () => {
+   $contenido.style.filter = `brightness(${ $inputBrillo.value })`;
+});
 
 
 
