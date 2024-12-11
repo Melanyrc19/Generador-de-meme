@@ -3,26 +3,36 @@ function $(element) {
 }
 
 const $inputTextoSuperior = $("#textoSuperior")
+const $inputTextoInferior = $("#textoInferior")
+
+const $sinTexto1 = $ ("#sinTextoSuperior")
+const $sinTexto2 = $ ("#sinTextoInferior")
+const $inputFuente = $ ("#fuente")
+const $inpurUrl= $("#inputUrl")
+const $inputFamilia = $ ("#familiaFuente")
+const $inputTamañoFuente = $ ("#tamañoFuente")
+const $inputAlinearTexto = $ ("#alinearTexto")
+// const $inpurOptionIzquierda = $ ("#textoIzquieda")
+// const $inpurOptionCentro = $ ("#textoCentro")
+// const $inpurOptionDerecha = $ ("#textoDerecha")
+const $inputColorTexto = $ ("#colorTexto")
+const $inputColorFondo = $ ("#colorFondo")
+const $inputTransparente = $("#fondoTransparente")
+const $inputPading = $ ("#padingTexto")
+const $inputTamañoLinea = $ ("#tamañoLinea")
+
 const $h1Texto = $("#primerTexto")
+const $h1SegundoTexto = $("#segundoTexto")
+const $imagen = $("#imagenMeme");
+const $cardTexto = ("#card")
 
 $inputTextoSuperior.addEventListener ("input", (e)  => {
 $h1Texto.innerText = e.target.value
 })
 
-$h1Texto.style.color = "red";
-$h1Texto.style.textAlign = "center";
-
-const $inputTextoInferior = $("#textoInferior")
-const $h1SegundoTexto = $("#segundoTexto")
-
 $inputTextoInferior.addEventListener ("input", (e) => {
 $h1SegundoTexto.innerText = e.target.value
 })
-$h1SegundoTexto.style.color = "red";
-$h1SegundoTexto.style.textAlign = "center";
-
-
-const $sinTexto1 = $ ("#sinTextoSuperior")
 
 if ($sinTexto1) {  
     $sinTexto1.addEventListener("click", (e) => {
@@ -30,7 +40,6 @@ if ($sinTexto1) {
     });
 }
 
-const $sinTexto2 = $ ("#sinTextoInferior")
 
 if ($sinTexto2){
     $sinTexto2.addEventListener ("click", (e) => {
@@ -38,15 +47,11 @@ if ($sinTexto2){
     })
 }
 
-const $inputFuente = $ ("#fuente")
 
 $inputFuente.addEventListener ("input", (e) => {
 $sinTexto1.innerText =  e.target.value;
 $sinTexto2.innerText =  e.target.value
 })
-
-const $imagen = $("#imagenMeme");
-const $inpurUrl= $("#inputUrl")
 
 if ($inpurUrl){
 $inpurUrl.addEventListener ("input", (e) => {
@@ -55,3 +60,29 @@ $inpurUrl.addEventListener ("input", (e) => {
     $imagen.style.maxHeight = "100%"; 
     $imagen.style.objectFit = "contain"; 
 }
+
+$inputTamañoFuente.addEventListener ("input", () => {
+    $h1Texto.style.fontZise = $inputTamañoFuente.value;
+    $h1SegundoTexto.style.fontZise = $inputTamañoFuente.value;
+
+})
+
+
+$inputColorTexto.addEventListener("input", () => {
+    $h1Texto.style.color = $inputColorTexto.value;
+    $h1SegundoTexto.style.color = $inputColorTexto.value
+})
+
+$inputColorFondo.addEventListener ("input", () => {
+    $h1Texto.style.backgroundColor = $inputColorFondo.value;
+    $h1SegundoTexto.style.backgroundColor = $inputColorFondo.value
+})
+
+$inputAlinearTexto.addEventListener ("input", ( ) =>{
+    $cardTexto.style.textAlign = $inputAlinearTexto.value
+})
+
+
+
+
+
