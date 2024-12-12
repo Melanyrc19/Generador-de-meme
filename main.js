@@ -2,6 +2,7 @@ function $(element) {
     return document.querySelector (element)
 }
 
+// aqui empienzan las funciones de los inputs
 const $inputTextoSuperior = $("#textoSuperior")
 const $inputTextoInferior = $("#textoInferior")
 
@@ -82,6 +83,44 @@ const $contenido =$ ("#card"); //
 $inputBrillo.addEventListener("input", () => {
    $contenido.style.filter = `brightness(${ $inputBrillo.value })`;
 });
+// botonImage
+// botonTexto
 
 
 
+
+
+
+
+
+
+
+
+// editorTexto editorImagen
+const $buttonTexto = $("#botonTexto")
+const $buttonImagen = $("#botonImagen")
+const $editorDeTexto = $("#editorTexto")
+const $editorDeImagen = $("#editorImagen")
+
+
+
+
+
+
+
+
+
+
+
+//   probar boton que cambie menu:
+
+if ($buttonImagen){
+    $buttonImagen.addEventListener ("click", (e) =>{
+        $editorDeImagen.style.zIndex = "2";
+        $editorDeTexto.style.zIndex = "1";
+
+    });  $buttonTexto.addEventListener ("click", (e) =>{
+        $editorDeTexto.style.zIndex = "2";
+        $editorDeImagen.style.zIndex = "1";
+
+    })}

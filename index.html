@@ -11,114 +11,116 @@
         <header>
             <h1>Generador de Meme</h1>
             <div class="header-button">
-                <button><i></i>Imagen</button>
-                <button><i></i>Texto</button>
+                <button id="botonImagen"><i></i>Imagen</button>
+                <button id="botonTexto"><i></i>Texto</button>
                 <button><i></i>Modo oscuro</button>
             </div> 
         </header>
 
         <main class="main">
             <div class="meme" id="card">
-                <h1 class="texto-arriba" id="primerTexto"></h1>
-                <div class="imagen-meme"><img  id="imagenMeme" src="" alt="meme"></div>
+                <h2 class="texto-arriba" id="primerTexto"></h2>
+                <div class="imagen-meme">
+                    <img  id="imagenMeme" src="" alt="meme">
+                </div>
                 <h2 class="texto-abajo" id="segundoTexto"></h2>
+                <button id="botonDescargarMeme" >
+                    <img src="" alt="">
+                    <p>Descargar meme</p>
+                </button>
             </div>
         </main>
 
-        <section class="boton-descargarMeme">
-            <button>
-                <img src="" alt="">
-                <p>Descargar meme</p>
-            </button>
-        </section>
     </section>
 
 
 
 
-    <section class="editor-de-meme">
-        <h2>IMAGEN</h2>
+    <section class="editor-de-meme" id="editorImagen">
+        <h2 >IMAGEN</h2>
 
         <div>
             <label>URL</label>
             <input class="" id="inputUrl" type="text" >
         </div>
         <div id="inputFondo">
-            <label>FONDO</label>
-            <input class="" type="radio" >
+            <label class="contenido-imagen">FONDO</label>
+            <input class="contenido-imagen" type="radio" >
         </div>
         <p>FILTROS:</p>
         <form>
-            <label>BRILLO </label>
-            <input class="" type="range" id="inputBrillo" min="0" max="1" step="0.1" >
+            <label class="contenido-imagen">BRILLO </label>
+            <input class="contenido-imagen" type="range" id="inputBrillo" min="0" max="1" step="0.1" >
         
         
-            <label>OPACIDAD</label>
-            <input class="" type="range"  id="inputOpacidad" min="0" max="1" step="0.1" >
+            <label class="contenido-imagen">OPACIDAD</label>
+            <input class="contenido-imagen" type="range"  id="inputOpacidad" min="0" max="1" step="0.1" >
        
-            <label>CONTRASTE </label>
-            <input class="" type="range" id="inputContraste" min="100%" max="1000%" step="1%">
+            <label class="contenido-imagen">CONTRASTE </label>
+            <input class="contenido-imagen" type="range" id="inputContraste" min="100%" max="1000%" step="1%">
         
-            <label>DESENFOQUE </label>
-            <input class="" type="range" id="inputDesenfoque" min="0px" max="10px" step="0.1px">
+            <label class="contenido-imagen">DESENFOQUE </label>
+            <input class="contenido-imagen" type="range" id="inputDesenfoque" min="0px" max="10px" step="0.1px">
         
-            <label>ESCALA DE GRISES </label>
-            <input class="" type="range" id="inputEscalaDeGrises" min="0%" max="100%" step="1%">
+            <label class="contenido-imagen">ESCALA DE GRISES </label>
+            <inputclass="contenido-imagen" type="range" id="inputEscalaDeGrises" min="0%" max="100%" step="1%">
         
-            <label>SEPIA </label>
-            <input class="" type="range" id="inputSepia" min="0%" max="100%" step="1%">
+            <label class="contenido-imagen">SEPIA </label>
+            <input class="contenido-imagen" type="range" id="inputSepia" min="0%" max="100%" step="1%">
         
-            <label>HUE </label>
-            <input class="" type="range"  id="inputHue" min="0deg" max="359deg" step="1deg">
+            <label class="contenido-imagen">HUE </label>
+            <input class="contenido-imagen" type="range"  id="inputHue" min="0deg" max="359deg" step="1deg">
         
-            <label>SATURADO </label>
-            <input class="" type="range" id="inputSaturado" min="100%" max="1000%" step="10%">
+            <label class="contenido-imagen">SATURADO </label>
+            <input class="contenido-imagen" type="range" id="inputSaturado" min="100%" max="1000%" step="10%">
         
-            <label>NEGATIVO</label>
-            <input class="" type="range" id="inputNegativo" min="0" max="1" step="0.1">
+            <label class="contenido-imagen">NEGATIVO</label>
+            <input class="contenido-imagen" type="range" id="inputNegativo" min="0" max="1" step="0.1">
         </form>
     </section>
 
     <section id="editorTexto">
         <h3>TEXTO</h3>
         <form>
-             <label>TEXTO SUPERIOR </label>
-             <input class="" type="text" id="textoSuperior">
+             <label class="editor-texto-contenido">TEXTO SUPERIOR </label>
+             <input class="editor-texto-contenido" type="text" id="textoSuperior">
       
-             <input type="radio" id="sinTextoSuperior"> <label>sin texto superior</label>
+             <input class="editor-texto-contenido" type="radio" id="sinTextoSuperior"> <label>sin texto superior</label>
         
-             <label>TEXTO INFERIOR </label>
-             <input class="" type="text" id="textoInferior">
+             <label class="editor-texto-contenido">TEXTO INFERIOR </label>
+             <input class="editor-texto-contenido" type="text" id="textoInferior">
     
-             <input type="radio" id="sinTextoInferior"> <label>sin texto inferior</label>
+             <input class="editor-texto-contenido" type="radio" id="sinTextoInferior"> <label>sin texto inferior</label>
 
-             <label>Familia de la fuente </label>
-             <input type="text" id="familiaFuente">
+             <label class="editor-texto-contenido">Familia de la fuente </label>
+             <input class="editor-texto-contenido" type="text" id="familiaFuente">
 
-             <label for="">Tamaño</label>
-             <input type="text" id="tamañoFuente">
+             <label class="editor-texto-contenido" for="">Tamaño</label>
+             <input class="editor-texto-contenido" type="text" id="tamañoFuente">
 
-             <label for="">Alinear texto</label>
-             <select name="" id="alinearTexto">
+             <label class="editor-texto-contenido" for="">Alinear texto</label>
+             <select class="editor-texto-contenido" name="" id="alinearTexto">
                 <option value="left">izquierda</option>
                 <option value="center">centro</option>
                 <option value="right">derecha</option>
              </select>
+<br>
+             <label class="editor-texto-contenido" for="">Color del texto:</label>
+             <input class="editor-texto-contenido" type="color" id="colorTexto">
+             <br>
 
-             <label for="">color del texto</label>
-             <input type="color" id="colorTexto">
+             <label class="editor-texto-contenido" for="">Color de fondo:</label>
+             <input class="editor-texto-contenido" type="color" id="colorFondo">
+             <br>
 
-             <label for="">color de fondo</label>
-             <input type="color" id="colorFondo">
+             <label class="editor-texto-contenido" for="">Fondo trasparente</label>
+             <input class="editor-texto-contenido" type="text" id="fondoTransparente">
 
-             <label for="">Fondo trasparente</label>
-             <input type="text" id="fondoTransparente">
+             <label class="editor-texto-contenido" for="">Pading del texto</label>
+             <input class="editor-texto-contenido" type="number" name="" id="padingTexto">
 
-             <label for="">Pading del texto</label>
-             <input type="number" name="" id="padingTexto">
-
-             <label for="">tamaño de linea</label>
-             <input type="number" name="" id="tamañoLinea">
+             <label class="editor-texto-contenido" for="">tamaño de linea</label>
+             <input class="editor-texto-contenido" type="number" name="" id="tamañoLinea">
         </form>
     </section>
 
