@@ -2,8 +2,6 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
- 
-    background-color: blanchedalmond;
 }
 .sectionArriba{
 width: 100vw;
@@ -59,14 +57,7 @@ header h1{
     margin: 80px 0 80px 0;
   
 }
-/* #modoOscuro{
-    background-color: black;
-    color: white;
- }
- #modoClaro{
-    background-color: white;
-    color: black;
- } */
+
 
 main .meme{
     width: 100%;
@@ -144,6 +135,15 @@ main .meme .texto-abajo {
 
 } */
 
+.modoOscuro{
+    background-color: black;
+    color: white;
+}
+
+.modoClaro{
+    background-color: white;
+    color: black;
+ } 
 
 @media (min-width: 768px){
   .sectionArriba{

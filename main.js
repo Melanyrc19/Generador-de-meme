@@ -108,10 +108,37 @@ const $editorDeImagen = $("#editorImagen")
         $editorDeImagen.style.display = "none";
 
     })
+// modo claro y oscuro:
+
+const $modoOscuro = $(".modoOscuro");
+const $modoClaro = $(".modoClaro");
+const $botonClaro = $("#botonColorFondo");
+const $body = $("main");
+
+
+if ($botonClaro.length) {  
+    $botonClaro.on("click", () => { 
+      $body.toggleClass("modoClaro");
+      $body.toggleClass("modoOscuro");
+    });
+  } else {
+    $body.toggleClass("modoClaro");
+  }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+  
 
     // cosas que faltan: imagenes/iconos de botones
     // terminar todos los items y hacer que no se sobre-escriban al ponerlos
