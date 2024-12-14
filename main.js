@@ -24,11 +24,11 @@ const $imagen = $("#imagenMeme");
 const $cardTexto = $("#card")
 
 $inputTextoSuperior.addEventListener ("input", (e)  => {
- $h1Texto.innerText = e.target.value
+    $h1Texto.innerText = e.target.value
 })
 
 $inputTextoInferior.addEventListener ("input", (e) => {
-  $h1SegundoTexto.innerText = e.target.value
+    $h1SegundoTexto.innerText = e.target.value
 })
 
 
