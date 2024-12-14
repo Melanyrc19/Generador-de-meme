@@ -5,7 +5,6 @@ function $(element) {
 // aqui empienzan las funciones de los inputs
 const $inputTextoSuperior = $("#textoSuperior")
 const $inputTextoInferior = $("#textoInferior")
-
 const $sinTexto1 = $("#sinTextoSuperior")
 const $sinTexto2 = $("#sinTextoInferior")
 const $inputFuente = $("#familiaFuente")
@@ -25,38 +24,38 @@ const $imagen = $("#imagenMeme");
 const $cardTexto = $("#card")
 
 $inputTextoSuperior.addEventListener ("input", (e)  => {
-$h1Texto.innerText = e.target.value
+ $h1Texto.innerText = e.target.value
 })
 
 $inputTextoInferior.addEventListener ("input", (e) => {
-$h1SegundoTexto.innerText = e.target.value
+  $h1SegundoTexto.innerText = e.target.value
 })
 
 
 $sinTexto1.addEventListener("click", (e) => {
-$h1Texto.style.display = "none";  
-    });
+    $h1Texto.style.display = "none";  
+});
 
 
 
 
  $sinTexto2.addEventListener ("click", () => {
- $h1SegundoTexto.style.display = "none";
+    $h1SegundoTexto.style.display = "none";
     })
 
 
 
 $inputFuente.addEventListener ("input", (e) => {
-$h1Texto.style.fontFamily =  e.target.value;
-$h1SegundoTexto.style.fontFamily =  e.target.value
+    $h1Texto.style.fontFamily =  e.target.value;
+    $h1SegundoTexto.style.fontFamily =  e.target.value
 })
 
 if ($inputUrl){
-$inputUrl.addEventListener ("input", (e) => {
-    $imagen.src = e.target.value});
-    $imagen.style.maxWidth = "100%"; 
-    $imagen.style.maxHeight = "100%"; 
-    $imagen.style.objectFit = "contain"; 
+    $inputUrl.addEventListener ("input", (e) => {
+        $imagen.src = e.target.value});
+        $imagen.style.maxWidth = "100%"; 
+        $imagen.style.maxHeight = "100%"; 
+        $imagen.style.objectFit = "contain"; 
 }
 
 $inputTamañoFuente.addEventListener ("input", () => {
@@ -81,7 +80,7 @@ const $inputBrillo = $("#inputBrillo");
 const $contenido =$ ("#card"); // 
 
 $inputBrillo.addEventListener("input", () => {
-   $contenido.style.filter = `brightness(${ $inputBrillo.value })`;
+    $contenido.style.filter = `brightness(${ $inputBrillo.value })`;
 });
 // botonImage
 // botonTexto
