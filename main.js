@@ -51,8 +51,8 @@ $h1Texto.style.fontFamily =  e.target.value;
 $h1SegundoTexto.style.fontFamily =  e.target.value
 })
 
- if ($inputUrl){
- $inputUrl.addEventListener ("input", (e) => {
+if ($inputUrl){
+$inputUrl.addEventListener ("input", (e) => {
     $imagen.src = e.target.value});
     $imagen.style.maxWidth = "100%"; 
     $imagen.style.maxHeight = "100%"; 
@@ -105,22 +105,15 @@ const $editorDeImagen = $("#editorImagen")
 
 
 
-
-
-
-
-
-
-
 //   probar boton que cambie menu:
 
 if ($buttonImagen){
     $buttonImagen.addEventListener ("click", (e) =>{
-        $editorDeImagen.style.zIndex = "2";
-        $editorDeTexto.style.zIndex = "1";
+        $editorDeImagen.style.display = "block";
+        $editorDeTexto.style.display= "none";
 
     });  $buttonTexto.addEventListener ("click", (e) =>{
-        $editorDeTexto.style.zIndex = "2";
-        $editorDeImagen.style.zIndex = "1";
+        $editorDeTexto.style.display = "block";
+        $editorDeImagen.style.display = "none";
 
     })}
