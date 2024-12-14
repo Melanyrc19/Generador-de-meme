@@ -6,37 +6,31 @@
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
-    <section class="sectionArriba">
-        <header>
-            <h1>Generador de Meme</h1>
-            <div class="header-button">
-                <button id="botonImagen"><i></i>Imagen</button>
-                <button id="botonTexto"><i></i>Texto</button>
-                <button><i></i>Modo oscuro</button>
-            </div> 
-        </header>
+<body class="sectionArriba">
+    <header >
+        <h1>Generador de Meme</h1>
+        <div class="header-button">
+            <button id="botonImagen"><i></i>Imagen</button>
+            <button id="botonTexto"><i></i>Texto</button>
+            <button><i></i>Modo oscuro</button>
+        </div> 
+    </header>
 
-        <main class="main" #modoOscuro>
-            <div class="meme" id="card">
-                <h2 class="texto-arriba" id="primerTexto"></h2>
-                <div class="imagen-meme">
-                    <img  id="imagenMeme" src="" alt="meme">
-                </div>
-                <h2 class="texto-abajo" id="segundoTexto"></h2>
-                <button id="botonDescargarMeme" >
-                    <img src="" alt="">
-                    <p>Descargar meme</p>
-                </button>
+    <main class="main" #modoOscuro>
+        <div class="meme" id="card">
+            <h2 class="texto-arriba" id="primerTexto"></h2>
+            <div class="imagen-meme">
+                <img  id="imagenMeme" src="" alt="meme">
             </div>
-        </main>
+            <h2 class="texto-abajo" id="segundoTexto"></h2>
+            <button id="botonDescargarMeme" >
+                <img src="" alt="">
+                <p>Descargar meme</p>
+             </button>
+        </div>
+    </main>
 
-    </section>
-
-
-
-
-    <section class="editor-de-meme" id="editorImagen">
+    <aside class="editor-de-meme" id="editorImagen">
         <h2 >IMAGEN</h2>
 
         <div>
@@ -77,9 +71,9 @@
             <label class="contenido-imagen">NEGATIVO</label>
             <input class="contenido-imagen" type="range" id="inputNegativo" min="0" max="1" step="0.1">
         </form>
-    </section>
+    </aside>
 
-    <section id="editorTexto">
+    <aside id="editorTexto">
         <h3>TEXTO</h3>
         <form>
              <label class="editor-texto-contenido">TEXTO SUPERIOR </label>
@@ -122,7 +116,7 @@
              <label class="editor-texto-contenido" for="">tamaño de linea</label>
              <input class="editor-texto-contenido" type="number" name="" id="tamañoLinea">
         </form>
-    </section>
+    </aside>
 
 
 
