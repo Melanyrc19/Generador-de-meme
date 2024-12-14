@@ -87,14 +87,6 @@ $inputBrillo.addEventListener("input", () => {
 
 
 
-
-
-
-
-
-
-
-
 // editorTexto editorImagen
 const $buttonTexto = $("#botonTexto")
 const $buttonImagen = $("#botonImagen")
@@ -106,13 +98,23 @@ const $editorDeImagen = $("#editorImagen")
 
 //   probar boton que cambie menu:
 
-if ($buttonImagen){
     $buttonImagen.addEventListener ("click", (e) =>{
         $editorDeImagen.style.display = "block";
         $editorDeTexto.style.display= "none";
 
-    });  $buttonTexto.addEventListener ("click", (e) =>{
+    })
+    $buttonTexto.addEventListener ("click", (e) =>{
         $editorDeTexto.style.display = "block";
         $editorDeImagen.style.display = "none";
 
-    })}
+    })
+
+
+
+
+
+    // cosas que faltan: imagenes/iconos de botones
+    // terminar todos los items y hacer que no se sobre-escriban al ponerlos
+    // boton: reestablecer funciones?
+    // ordenar js en funciones y ejecuciones
+    // que el responsibe este bien en tamaño emobile, table y compu.
