@@ -13,7 +13,7 @@ align-items: center;
 header{
     height: fit-content;
     width: 100%;
-    background-color: lightcoral;
+    background-color: rgb(230, 169, 169);
     color: black;
     padding-bottom: 10px;
 }
@@ -37,6 +37,7 @@ header h1{
     margin: 0 auto;
     border: none;
     background-color: transparent;
+    color: inherit;
     font-weight: 100;
     font-size: 12px;
     cursor: pointer;           
@@ -74,6 +75,8 @@ main .meme .texto-arriba{
 }
 main .meme .imagen-meme {
     height:80%;
+    background-color: black;
+  
 }
 main .meme .texto-abajo {
     height: auto;
@@ -109,8 +112,6 @@ main button{
     width: 320px;
     box-sizing: border-box; 
     height: fit-content;
-    background-color: rgb(69, 64, 64);
-    color: pink;
     }
 
 #editorTexto{
@@ -121,8 +122,10 @@ main button{
     width: 320px;
     box-sizing: border-box; 
     height: fit-content;
-    background-color: rgb(69, 64, 64);
-    color: pink; 
+}
+.colorAside{
+    background-color: rgb(223, 220, 220);
+    color: rgb(0, 0, 0);
 }
 .editor-texto-contenido{
     margin: 6px 0;
@@ -134,7 +137,16 @@ main button{
 } */
 
 .modoOscuro{
-    background-color: black;
+    background-color: rgb(12, 36, 49);
+    color: white;
+}
+.modoOscuroHeader{
+    background-color: rgb(140, 102, 188);
+    color: white;
+
+}
+.modoOscuroAside{
+    background-color: rgb(75, 27, 27);
     color: white;
 }
 
@@ -200,8 +212,8 @@ main button{
         width: 200px;
         box-sizing: border-box; 
         height: 600px;
-        background-color: rgb(69, 64, 64);
-        color: pink;
+        background-color: rgb(223, 220, 220);
+        color: rgb(0, 0, 0);
         display: flex; 
         flex-direction: column ;
         justify-content: center;
@@ -216,8 +228,8 @@ main button{
             width: 200px;
             box-sizing: border-box; 
             height: 600px;
-            background-color: rgb(69, 64, 64);
-            color: pink;
+            background-color: rgb(223, 220, 220);
+            color: rgb(0, 0, 0);
             display: flex; 
             flex-direction: column ;
             justify-content: center;

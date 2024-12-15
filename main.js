@@ -110,19 +110,26 @@ const $editorDeImagen = $("#editorImagen")
 // modo claro y oscuro:
 
 const $modoOscuro = $(".modoOscuro");
+const $modoOscuroHeader = $(".modoOscuroHeader");
 const $modoClaro = $(".modoClaro");
 const $botonFondo = $("#botonColorFondo");
 const $body= $("body");
 const $imagenMeme = $(".imagen-meme")
+const $header = $("header")
+const $modoOscuroAside = $(".modoOscuroAside")
 
 
 
 
     $botonFondo.addEventListener("click", (e) => { 
       $body.classList.toggle("modoOscuro");
-      $imagenMeme.classList.toggle("modoClaro");
-
+      $header.classList.toggle("modoOscuroHeader");
+      $editorDeTexto.classList.toggle("modoOscuroAside");
+      $editorDeImagen.classList.toggle("modoOscuroAside");
     })
+
+
+  
 
 
 
