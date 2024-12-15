@@ -146,7 +146,7 @@ main button{
 
 }
 .modoOscuroAside{
-    background-color: rgb(75, 27, 27);
+    background-color: rgb(47, 41, 41);
     color: white;
 }
 
@@ -212,8 +212,6 @@ main button{
         width: 200px;
         box-sizing: border-box; 
         height: 600px;
-        background-color: rgb(223, 220, 220);
-        color: rgb(0, 0, 0);
         display: flex; 
         flex-direction: column ;
         justify-content: center;
@@ -228,8 +226,6 @@ main button{
             width: 200px;
             box-sizing: border-box; 
             height: 600px;
-            background-color: rgb(223, 220, 220);
-            color: rgb(0, 0, 0);
             display: flex; 
             flex-direction: column ;
             justify-content: center;

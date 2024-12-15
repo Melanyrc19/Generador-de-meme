@@ -117,6 +117,7 @@ const $body= $("body");
 const $imagenMeme = $(".imagen-meme")
 const $header = $("header")
 const $modoOscuroAside = $(".modoOscuroAside")
+const $aside= $("aside")
 
 
 
@@ -124,8 +125,9 @@ const $modoOscuroAside = $(".modoOscuroAside")
     $botonFondo.addEventListener("click", (e) => { 
       $body.classList.toggle("modoOscuro");
       $header.classList.toggle("modoOscuroHeader");
-      $editorDeTexto.classList.toggle("modoOscuroAside");
-      $editorDeImagen.classList.toggle("modoOscuroAside");
+      $aside.classList.toggle("modoOscuroAside");
+      $aside.classList.toggle("colorAside");
+    //   $editorDeImagen.classList.toggle("colorAside")
     })
 
 
