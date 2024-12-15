@@ -73,7 +73,6 @@ main .meme .texto-arriba{
     margin: 0;
 }
 main .meme .imagen-meme {
-    background-color: black;
     height:80%;
 }
 main .meme .texto-abajo {
@@ -140,7 +139,7 @@ main button{
 }
 
 .modoClaro{
-    background-color: white;
+    background-color: rgba(213, 128, 104, 0.529);
     color: black;
  } 
 
@@ -191,7 +190,6 @@ main button{
         position: relative;
         left: 80px;
         top: 0px;
-
         }
 
     #editorTexto{

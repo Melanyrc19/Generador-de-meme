@@ -50,13 +50,12 @@ $inputFuente.addEventListener ("input", (e) => {
     $h1SegundoTexto.style.fontFamily =  e.target.value
 })
 
-if ($inputUrl){
+
     $inputUrl.addEventListener ("input", (e) => {
-        $imagen.src = e.target.value});
+        $imagen.src = e.target.value;
         $imagen.style.maxWidth = "100%"; 
         $imagen.style.maxHeight = "100%"; 
-        $imagen.style.objectFit = "contain"; 
-}
+        $imagen.style.objectFit = "contain"; })
 
 $inputTamañoFuente.addEventListener ("input", () => {
     $h1Texto.style.fontSize = $inputTamañoFuente.value + "px";
@@ -112,18 +111,18 @@ const $editorDeImagen = $("#editorImagen")
 
 const $modoOscuro = $(".modoOscuro");
 const $modoClaro = $(".modoClaro");
-const $botonClaro = $("#botonColorFondo");
-const $body = $("main");
+const $botonFondo = $("#botonColorFondo");
+const $body= $("body");
+const $imagenMeme = $(".imagen-meme")
 
 
-if ($botonClaro.length) {  
-    $botonClaro.on("click", () => { 
-      $body.toggleClass("modoClaro");
-      $body.toggleClass("modoOscuro");
-    });
-  } else {
-    $body.toggleClass("modoClaro");
-  }
+
+
+    $botonFondo.addEventListener("click", (e) => { 
+      $body.classList.toggle("modoOscuro");
+      $imagenMeme.classList.toggle("modoClaro");
+
+    })
 
 
 
