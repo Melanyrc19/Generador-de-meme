@@ -86,21 +86,17 @@ const $buttonImagen = $("#botonImagen")
 const $editorDeTexto = $("#editorTexto")
 const $editorDeImagen = $("#editorImagen")
 
-
-
-
 //   probar boton que cambie menu:
 
-    $buttonImagen.addEventListener ("click", (e) =>{
-        $editorDeImagen.style.display = "block";
-        $editorDeTexto.style.display= "none";
+$buttonImagen.addEventListener ("click", (e) =>{
+    $editorDeImagen.style.display = "block";
+    $editorDeTexto.style.display= "none";
+})
+$buttonTexto.addEventListener ("click", (e) =>{
+    $editorDeTexto.style.display = "block";
+    $editorDeImagen.style.display = "none";
 
-    })
-    $buttonTexto.addEventListener ("click", (e) =>{
-        $editorDeTexto.style.display = "block";
-        $editorDeImagen.style.display = "none";
-
-    })
+})
 // modo claro y oscuro:
 
 const $modoOscuro = $(".modoOscuro");
@@ -127,7 +123,6 @@ const $botonDescargarMeme= $("#botonDescargarMeme")
 
 
 // EVENTOS DE TEXTO:
-
 
 const $inputOpacidad = $("#inputOpacidad")
 const $inputContraste= $("#inputContraste")
@@ -179,36 +174,25 @@ $inputNegativo.addEventListener("input", () => {
     $contenido.style.filter = `${aux} invert(${ $inputNegativo.value })`;
 });
 
-
-//  function filtros (){
-//     const filtros =
-//     brillo($ {$inputBrillo})
-//      ${opacidad} 
-//      ${contraste} 
-//      ${desenfoque}  
-//      ${grises} 
-//      ${sepia} 
-//      ${hue}  
-//      ${saturado} 
-//      ${negativos}
-
-
-// }
-
-// restablecer valores:
-
 function restablecerValores() {
-    let filtro = 'brightness(1) opacity(1) contrast(100%) blur(0px) grayscale(0%) sepia(0%) hue-rotation(0deg) saturate(100%) invert(1)';
-    $contenido.style.filter = filtro;
     $inputBrillo.value = 1;
+    $contenido.style.filter = `brightness(1)`;
     $inputOpacidad.value = 1;
+    $contenido.style.filter = `opacity(1)`;
     $inputContraste.value = 100;
+    $contenido.style.filter = `contrast(100%)`
     $inputDesenfoque.value = 0;
+    $contenido.style.filter = `blur(0px)`
     $inputEscalaDeGrises.value = 0;
+    $contenido.style.filter = ` grayscale(0%)`
     $inputSepia.value = 0;
+     $contenido.style.filter = ` sepia(0%)`
     $inputHue.value = 0;
+    $contenido.style.filter = ` hue-rotation(0deg) `
     $inputSaturado.value = 100;
+    $contenido.style.filter = ` saturate(100%)`
     $inputNegativo.value = 1;
+    $contenido.style.filter = `invert(1)`
 }
 restablecerValores ();
 

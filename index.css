@@ -72,9 +72,10 @@ main .meme .texto-arriba{
 }
 main .meme .imagen-meme {
     height:80%;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
   
 }
+
 main .meme .texto-abajo {
     height: auto;
     min-height: 20%;
