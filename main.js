@@ -14,9 +14,13 @@ const $inputTamañoFuente = $("#tamañoFuente")
 const $inputAlinearTexto = $("#alinearTexto")
 const $inputColorTexto = $("#colorTexto")
 const $inputColorFondo = $("#colorFondo")
-const $inputTransparente = $("#fondoTransparente")
+
 const $inputPading = $("#padingTexto")
 const $inputTamañoLinea = $("#tamañoLinea")
+const $inputFondoTransparente = $("#fondoTransparente")
+
+
+
 
 const $h1Texto = $("#primerTexto")
 const $h1SegundoTexto = $("#segundoTexto")
@@ -33,29 +37,31 @@ $inputTextoInferior.addEventListener ("input", (e) => {
 
 
 $sinTexto1.addEventListener("click", (e) => {
-    $h1Texto.style.display = "none";  
+    if ($h1Texto.style.display === "none") {
+        $h1Texto.style.display = "block";
+    } else {
+        $h1Texto.style.display = "none";
+    }
 });
 
-
-
-
  $sinTexto2.addEventListener ("click", () => {
-    $h1SegundoTexto.style.display = "none";
+     if ($h1SegundoTexto.style.display === "none") {
+        $h1SegundoTexto.style.display = "block";
+    } else {
+        $h1SegundoTexto.style.display = "none";
+    }
     })
-
-
 
 $inputFuente.addEventListener ("input", (e) => {
     $h1Texto.style.fontFamily =  e.target.value;
-    $h1SegundoTexto.style.fontFamily =  e.target.value
+     $h1Texto.style.fontFamily =  e.target.value
 })
 
-
-    $inputUrl.addEventListener ("input", (e) => {
-        $imagen.src = e.target.value;
-        $imagen.style.maxWidth = "100%"; 
-        $imagen.style.maxHeight = "100%"; 
-        $imagen.style.objectFit = "contain"; })
+$inputUrl.addEventListener ("input", (e) => {
+    $imagen.src = e.target.value;
+    $imagen.style.maxWidth = "100%"; 
+    $imagen.style.maxHeight = "100%"; 
+    $imagen.style.objectFit = "contain"; })
 
 $inputTamañoFuente.addEventListener ("input", () => {
     $h1Texto.style.fontSize = $inputTamañoFuente.value + "px";
@@ -75,12 +81,141 @@ $inputAlinearTexto.addEventListener ("input", ( ) =>{
     $cardTexto.style.textAlign = $inputAlinearTexto.value
 })
 
-// botonImage
-// botonTexto
+$inputFondoTransparente.addEventListener ("click", ( ) =>{
+   $contenido.style.backgroundImage = `url(${ $inputUrl.value })`;
+   
+ })
+// const $inputPading = $("#padingTexto")
+// const $inputTamañoLinea = $("#tamañoLinea")
+
+$inputPading.addEventListener ("input", ( ) =>{ 
+    $h1Texto.style.padding = `${$inputPading.value}px`;
+    $h1SegundoTexto.style.padding =`${$inputPading.value}px`;
+})
+$inputTamañoLinea.addEventListener ("input", ( ) =>{ 
+    $h1Texto.style.height = `${$inputTamañoLinea.value}px`;
+    $h1SegundoTexto.style.height =`${$inputTamañoLinea.value}px`;
+})
+
+
+// EVENTOS DE TEXTO:
+
+const $inputOpacidad = $("#inputOpacidad")
+const $inputContraste= $("#inputContraste")
+const $inputDesenfoque = $("#inputDesenfoque")
+const $inputEscalaDeGrises = $("#inputEscalaDeGrises")
+const $inputSepia = $("#inputSepia")
+const $inputHue = $("#inputHue")
+const $inputSaturado = $("#inputSaturado")
+const $inputNegativo = $("#inputNegativo")
+const $inputBrillo = $("#inputBrillo");
+const $contenido =$ ("#card"); 
 
 
 
-// editorTexto editorImagen
+
+$inputBrillo.addEventListener("input", () => {
+    const aux = $contenido.style.filter ;
+    $contenido.style.filter = `brightness(${ $inputBrillo.value })`;
+});
+
+$inputOpacidad.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux} opacity(${ $inputOpacidad.value })`;
+});
+
+$inputContraste.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux}  contrast(${ $inputContraste.value })`;
+});
+
+$inputDesenfoque.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux} blur(${ $inputDesenfoque.value })`;
+});
+
+$inputEscalaDeGrises.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux}  grayscale(${ $inputEscalaDeGrises.value })`;
+});
+
+$inputSepia.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux} sepia(${ $inputSepia.value })`;
+});
+
+$inputHue.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = ` ${aux} hue-rotation(${ $inputHue.value })`;
+});
+
+$inputSaturado.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = ` ${aux} saturation(${ $inputSaturado.value })`;
+});
+
+$inputNegativo.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux} invert(${ $inputNegativo.value })`;
+});
+
+function restablecerValores() {
+    $inputBrillo.value = 1;
+    $contenido.style.filter = `brightness(1)`;
+    $inputOpacidad.value = 1;
+    $contenido.style.filter = `opacity(1)`;
+    $inputContraste.value = 100;
+    $contenido.style.filter = `contrast(100%)`
+    $inputDesenfoque.value = 0;
+    $contenido.style.filter = `blur(0px)`
+    $inputEscalaDeGrises.value = 0;
+    $contenido.style.filter = ` grayscale(0%)`
+    $inputSepia.value = 0;
+     $contenido.style.filter = ` sepia(0%)`
+    $inputHue.value = 0;
+    $contenido.style.filter = ` hue-rotation(0deg) `
+    $inputSaturado.value = 100;
+    $contenido.style.filter = ` saturate(100%)`
+    $inputNegativo.value = 1;
+    $contenido.style.filter = `invert(0)`
+
+    $inputTextoSuperior.value ="Escribi texto superior"  
+    $h1Texto.innerText ="Escribi texto superior"
+    $inputTextoInferior.value ="Escribir texto inferior"  
+    $h1SegundoTexto.innerText = "Escribir texto inferior"  
+    $sinTexto1.value =`block`   
+    $h1Texto.style.display =`block`    
+    $sinTexto2.value =`display:block`  
+    $h1SegundoTexto.style.display =`block`
+    $inputFuente.value =`Arial, Helvetica, sans-serif`   
+    $h1Texto.style.fontFamily = `Arial, Helvetica, sans-serif`  
+    $h1Texto.style.fontFamily =`Arial, Helvetica, sans-serif`   
+    $inputUrl.value =``   
+    $imagen.src = ``   
+    $inputTamañoFuente.value =`15px`   
+    $h1Texto.style.fontSize =`15px`   
+    $h1SegundoTexto.style.fontSize =`15px`   
+    $inputColorTexto.value =`black`   
+    $cardTexto.style.color = `black`  
+    $inputColorFondo.value =`gray`   ;
+    $h1Texto.style.backgroundColor =`gray`   
+    $h1SegundoTexto.style.backgroundColor =`gray`   
+    $inputAlinearTexto.value =`center`   
+    $cardTexto.style.textAlign = `center`  
+
+}
+restablecerValores ();
+
+const $restablecer = $(".restablecerValoresMeme");
+
+$restablecer.addEventListener("click", restablecerValores);
+
+
+
+
+
+// botones del header:
+
 const $buttonTexto = $("#botonTexto")
 const $buttonImagen = $("#botonImagen")
 const $editorDeTexto = $("#editorTexto")
@@ -108,107 +243,31 @@ const $imagenMeme = $(".imagen-meme")
 const $header = $("header")
 const $modoOscuroAside = $(".modoOscuroAside")
 const $aside= $("aside")
-const $botonDescargarMeme= $("#botonDescargarMeme")
 
 
-
-
-    $botonFondo.addEventListener("click", (e) => { 
-      $body.classList.toggle("modoOscuro");
-      $header.classList.toggle("modoOscuroHeader");
-      $aside.classList.toggle("modoOscuroAside");
-      $aside.classList.toggle("colorAside");
-      
-    })
-
-
-// EVENTOS DE TEXTO:
-
-const $inputOpacidad = $("#inputOpacidad")
-const $inputContraste= $("#inputContraste")
-const $inputDesenfoque = $("#inputDesenfoque")
-const $inputEscalaDeGrises = $("#inputEscalaDeGrises")
-const $inputSepia = $("#inputSepia")
-const $inputHue = $("#inputHue")
-const $inputSaturado = $("#inputSaturado")
-const $inputNegativo = $("#inputNegativo")
-const $inputBrillo = $("#inputBrillo");
-const $contenido =$ ("#card"); 
-
-
-
-$inputBrillo.addEventListener("input", () => {
-    const aux = $contenido.style.filter ;
-    $contenido.style.filter = `brightness(${ $inputBrillo.value })`;
-});
-$inputOpacidad.addEventListener("input", () => {
-    const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux} opacity(${ $inputOpacidad.value })`;
-});
-$inputContraste.addEventListener("input", () => {
-    const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux}  contrast(${ $inputContraste.value })`;
-});
-$inputDesenfoque.addEventListener("input", () => {
-    const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux} blur(${ $inputDesenfoque.value })`;
-});
-$inputEscalaDeGrises.addEventListener("input", () => {
-    const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux}  grayscale(${ $inputEscalaDeGrises.value })`;
-});
-$inputSepia.addEventListener("input", () => {
-    const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux} sepia(${ $inputSepia.value })`;
-});
-$inputHue.addEventListener("input", () => {
-    const aux = $contenido.style.filter;
-    $contenido.style.filter = ` ${aux} hue-rotation(${ $inputHue.value })`;
-});
-$inputSaturado.addEventListener("input", () => {
-    const aux = $contenido.style.filter;
-    $contenido.style.filter = ` ${aux} saturation(${ $inputSaturado.value })`;
-});
-$inputNegativo.addEventListener("input", () => {
-    const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux} invert(${ $inputNegativo.value })`;
-});
-
-function restablecerValores() {
-    $inputBrillo.value = 1;
-    $contenido.style.filter = `brightness(1)`;
-    $inputOpacidad.value = 1;
-    $contenido.style.filter = `opacity(1)`;
-    $inputContraste.value = 100;
-    $contenido.style.filter = `contrast(100%)`
-    $inputDesenfoque.value = 0;
-    $contenido.style.filter = `blur(0px)`
-    $inputEscalaDeGrises.value = 0;
-    $contenido.style.filter = ` grayscale(0%)`
-    $inputSepia.value = 0;
-     $contenido.style.filter = ` sepia(0%)`
-    $inputHue.value = 0;
-    $contenido.style.filter = ` hue-rotation(0deg) `
-    $inputSaturado.value = 100;
-    $contenido.style.filter = ` saturate(100%)`
-    $inputNegativo.value = 1;
-    $contenido.style.filter = `invert(1)`
-}
-restablecerValores ();
-
-const $restablecer = $(".restablecerValoresMeme");
-
-
-$restablecer.addEventListener("click", restablecerValores);
-
-
-
-
-
+function $cambioModoClaroOscuro () { 
+    $body.classList.toggle("modoOscuro");
+    $header.classList.toggle("modoOscuroHeader");
+    $aside.classList.toggle("modoOscuroAside");
+    $aside.classList.toggle("colorAside");
+    if ($botonFondo.innerText === "Modo Claro") {
+        $botonFondo.innerText = "Modo Oscuro";
+         } else {
+        $botonFondo.innerText = "Modo Claro";
+    }
+ }
+$botonFondo.addEventListener("click", $cambioModoClaroOscuro);
 
 
 
   
+const $botonDescargarMeme= $("#botonDescargarMeme")
+
+$botonDescargarMeme.addEventListener ("click", () => {
+    domtoimage.toBlob ($).then((blob) => {
+        saveAs(blob, "my-meme.png");
+    })
+})
 
     // cosas que faltan: imagenes/iconos de botones
     // terminar todos los items y hacer que no se sobre-escriban al ponerlos
