@@ -56,10 +56,7 @@ header h1{
     justify-content: center;
     align-items: center;
     margin: 50px 0 50px 0;
-  
 }
-
-
 main .meme{
     width: 100%;
     height: 100%;
@@ -103,39 +100,51 @@ main button{
     top: 30px;
 
 }
+main button #botonDescargarMeme{
+    background-color: green;
+}
 
 #editorImagen{
     position: absolute;
-    top:500px;
+    top:600px;
     right: 0;
     padding: 15px;
     width: 320px;
     box-sizing: border-box; 
     height: fit-content;
+    min-height: 650px ;
     }
 
 #editorTexto{
     position: absolute;
-    top:500px;
+    top:600px;
     right: 0;
     padding: 15px;
     width: 320px;
     box-sizing: border-box; 
     height: fit-content;
+    min-height: 650px ;
 }
 .colorAside{
     background-color: rgb(223, 220, 220);
     color: rgb(0, 0, 0);
 }
 .editor-texto-contenido{
-    margin: 6px 0;
-    text-align: center;
+    margin: 5px 0;
+    text-align: start;
 }
-/* #editorTexto.abierto{
-    width: 100%;
-
-} */
-
+.contenido-imagen{
+    margin:1px;
+    padding: 1px;
+    height: 12px;
+}
+.form-contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-size: 13px;
+}
 .modoOscuro{
     background-color: rgb(12, 36, 49);
     color: white;
@@ -218,29 +227,23 @@ main button{
         align-self: center;
         }
 
-        #editorImagen{
-            position: absolute;
-            top: 110px;
-            right: 0px;
-            padding: 15px;
-            width: 200px;
-            box-sizing: border-box; 
-            height: 600px;
-            display: flex; 
-            flex-direction: column ;
-            justify-content: center;
-            align-self: center;
-            }
-            .contenido-imagen{
-                margin: 5px 0;
-                text-align: center;
-            }
-        
-    /* #editorTexto.abierto{
-        width: 100%;
-        
-        } */
-         
+    #editorImagen{
+        position: absolute;
+        top: 110px;
+        right: 0px;
+        padding: 15px;
+        width: 200px;
+        box-sizing: border-box; 
+        height: 600px;
+        display: flex; 
+        flex-direction: column ;
+        justify-content: center;
+        align-self: center;
+        }
+    .contenido-imagen{
+        margin: 5px 0;
+        text-align: center;
+        }        
 }
 @media (min-width: 1024px){
 

@@ -74,13 +74,7 @@ $inputColorFondo.addEventListener ("input", () => {
 $inputAlinearTexto.addEventListener ("input", ( ) =>{
     $cardTexto.style.textAlign = $inputAlinearTexto.value
 })
-// EVENTOS DE TEXTO:
-const $inputBrillo = $("#inputBrillo");
-const $contenido =$ ("#card"); // 
 
-$inputBrillo.addEventListener("input", () => {
-    $contenido.style.filter = `brightness(${ $inputBrillo.value })`;
-});
 // botonImage
 // botonTexto
 
@@ -118,6 +112,7 @@ const $imagenMeme = $(".imagen-meme")
 const $header = $("header")
 const $modoOscuroAside = $(".modoOscuroAside")
 const $aside= $("aside")
+const $botonDescargarMeme= $("#botonDescargarMeme")
 
 
 
@@ -127,17 +122,100 @@ const $aside= $("aside")
       $header.classList.toggle("modoOscuroHeader");
       $aside.classList.toggle("modoOscuroAside");
       $aside.classList.toggle("colorAside");
-    //   $editorDeImagen.classList.toggle("colorAside")
+      
     })
 
 
-  
+// EVENTOS DE TEXTO:
+
+
+const $inputOpacidad = $("#inputOpacidad")
+const $inputContraste= $("#inputContraste")
+const $inputDesenfoque = $("#inputDesenfoque")
+const $inputEscalaDeGrises = $("#inputEscalaDeGrises")
+const $inputSepia = $("#inputSepia")
+const $inputHue = $("#inputHue")
+const $inputSaturado = $("#inputSaturado")
+const $inputNegativo = $("#inputNegativo")
+const $inputBrillo = $("#inputBrillo");
+const $contenido =$ ("#card"); 
 
 
 
+$inputBrillo.addEventListener("input", () => {
+    const aux = $contenido.style.filter ;
+    $contenido.style.filter = `brightness(${ $inputBrillo.value })`;
+});
+$inputOpacidad.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux} opacity(${ $inputOpacidad.value })`;
+});
+$inputContraste.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux}  contrast(${ $inputContraste.value })`;
+});
+$inputDesenfoque.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux} blur(${ $inputDesenfoque.value })`;
+});
+$inputEscalaDeGrises.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux}  grayscale(${ $inputEscalaDeGrises.value })`;
+});
+$inputSepia.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux} sepia(${ $inputSepia.value })`;
+});
+$inputHue.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = ` ${aux} hue-rotation(${ $inputHue.value })`;
+});
+$inputSaturado.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = ` ${aux} saturation(${ $inputSaturado.value })`;
+});
+$inputNegativo.addEventListener("input", () => {
+    const aux = $contenido.style.filter;
+    $contenido.style.filter = `${aux} invert(${ $inputNegativo.value })`;
+});
 
 
+//  function filtros (){
+//     const filtros =
+//     brillo($ {$inputBrillo})
+//      ${opacidad} 
+//      ${contraste} 
+//      ${desenfoque}  
+//      ${grises} 
+//      ${sepia} 
+//      ${hue}  
+//      ${saturado} 
+//      ${negativos}
 
+
+// }
+
+// restablecer valores:
+
+function restablecerValores() {
+    let filtro = 'brightness(1) opacity(1) contrast(100%) blur(0px) grayscale(0%) sepia(0%) hue-rotation(0deg) saturate(100%) invert(1)';
+    $contenido.style.filter = filtro;
+    $inputBrillo.value = 1;
+    $inputOpacidad.value = 1;
+    $inputContraste.value = 100;
+    $inputDesenfoque.value = 0;
+    $inputEscalaDeGrises.value = 0;
+    $inputSepia.value = 0;
+    $inputHue.value = 0;
+    $inputSaturado.value = 100;
+    $inputNegativo.value = 1;
+}
+restablecerValores ();
+
+const $restablecer = $(".restablecerValoresMeme");
+
+
+$restablecer.addEventListener("click", restablecerValores);
 
 
 
@@ -153,3 +231,4 @@ const $aside= $("aside")
     // boton: reestablecer funciones?
     // ordenar js en funciones y ejecuciones
     // que el responsibe este bien en tamaño emobile, table y compu.
+    // boton descargar meme
