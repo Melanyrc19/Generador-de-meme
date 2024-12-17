@@ -11,7 +11,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
     integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
     crossorigin="anonymous"></script>
-    
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
 </head>
@@ -40,15 +39,15 @@
     </main>
 
     <aside class="editor-de-meme colorAside" id="editorImagen">
+        <button id="cerrarAside" class="cerrar">X</button>
         <h2 >IMAGEN</h2>
-
         <div>
             <label>URL</label>
             <input class="" id="inputUrl" type="text" >
         </div>
-        <div id="inputFondo">
+        <div">
             <label class="contenido-imagen">FONDO</label>
-            <input class="contenido-imagen" type="radio" >
+            <input class="contenido-imagen" type="color" id="inputFondo" >
         </div>
         <p alineadoIzquierda>FILTROS:</p>
         <form class="form-contenedor">
@@ -80,10 +79,11 @@
             <label class="contenido-imagen alineadoIzquierda">NEGATIVO</label>
             <input class="contenido-imagen" type="range" id="inputNegativo" min="0" max="1" step="0.1">
         </form>
-        <button  class="restablecerValoresImagen">Reestablecer valores</button>
+        <button  class="restablecerValoresImagen">Reestablecer</button>
     </aside>
 
     <aside class="colorAside" id="editorTexto">
+        <button id="cerrarAsideTexto" class="cerrar">X</button>    
         <h3>TEXTO</h3>
         <form>
              <label class="editor-texto-contenido">TEXTO SUPERIOR </label>
@@ -97,7 +97,15 @@
              <input class="editor-texto-contenido" type="radio" id="sinTextoInferior"> <label>sin texto inferior</label>
 
              <label class="editor-texto-contenido">Familia de la fuente </label>
-             <input class="editor-texto-contenido" type="text" id="familiaFuente">
+             <select class="editor-texto-contenido" name="" id="familiaFuente">
+                <option value="Arial, Helvetica, sans-serif">Arial</option>
+                <option value="'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">'Franklin Gothic Medium'</option>
+                <option value="'Times New Roman', Times, serif">'Times New Roman'</option>
+                <option value="Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Cambria</option>
+                <option value="cursive">cursive</option>
+                
+             </select>
+             
 
              <label class="editor-texto-contenido" for="">Tamaño</label>
              <input class="editor-texto-contenido" type="text" id="tamañoFuente">
@@ -128,6 +136,7 @@
         </form>
         <button class="restablecerValoresTexto">Restablecer valores</button>
     </aside>
+
     <script src="main.js"> </script>
 </body>
 </html>
