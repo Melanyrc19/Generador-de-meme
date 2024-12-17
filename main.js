@@ -90,7 +90,9 @@ $inputAlinearTexto.addEventListener ("input", ( ) =>{
 
 $inputFondoTransparente.addEventListener ("click", ( ) =>{
     $h1Texto.classList.toggle("transparente");
+    $h1Texto.classList.toggle("claseColorGris");
     $h1SegundoTexto.classList.toggle("transparente");
+    $h1SegundoTexto.classList.toggle("claseColorGris");
     $contenido.style.backgroundImage = `url(${ $inputUrl.value })`;
     $imagen.classList.toggle ("ocultar");
     $contenido.style.display = "flex";
@@ -210,9 +212,9 @@ function restablecerValoresTexto (){
     $h1SegundoTexto.style.fontSize =`12px`   
     $inputColorTexto.value =`black`   
     $cardTexto.style.color = `black`  
-    $inputColorFondo.value =`gray`   
-    $h1Texto.style.backgroundColor =`gray`   
-    $h1SegundoTexto.style.backgroundColor =`gray`   
+    $inputColorFondo.value =``   
+    $h1Texto.style.backgroundColor =``   
+    $h1SegundoTexto.style.backgroundColor =``   
     $inputAlinearTexto.value =`center`   
     $cardTexto.style.textAlign = `center` 
     $inputPading.value = `30px`

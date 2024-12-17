@@ -186,7 +186,9 @@ main button #botonDescargarMeme{
  .transparente {
     background-color: transparent;
  }
-
+ .claseColorGris{
+    background-color: gray;
+ }
 
 @media (min-width: 768px){
     .sectionArriba{
