@@ -359,12 +359,6 @@ main button #botonDescargarMeme{
         object-fit: contain;
         
     }
-    main .texto-arriba{
-        
-    }
-    main .texto-abajo{
-       
-    }
  
     #botonDescargarMeme{
         background-color: rgb(99, 162, 107);
@@ -414,13 +408,14 @@ main button #botonDescargarMeme{
     #cerrarAside{
         position: relative;
         top: 1px;
-        left: 150px;
+        left: 130px;
+        width: 30px;
         background-color: rgb(155, 155, 220);
     }
     #cerrarAsideTexto{
         position: relative;
         top: 1px;
-        left: 150px;
+        left: 130px;
         width: 30px;
         background-color: rgb(155, 155, 220);
     }
