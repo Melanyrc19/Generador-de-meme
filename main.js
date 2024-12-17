@@ -69,11 +69,6 @@ $inputFuente.addEventListener ("input", (e) => {
      $h1Texto.style.fontFamily =  e.target.value
 })
 
-$inputUrl.addEventListener ("input", (e) => {
-    $imagen.src = e.target.value;
-    $imagen.style.maxWidth = "100%"; 
-    $imagen.style.maxHeight = "100%"; 
-    $imagen.style.objectFit = "contain"; })
 
 $inputTamañoFuente.addEventListener ("input", () => {
     $h1Texto.style.fontSize = $inputTamañoFuente.value + "px";
@@ -94,7 +89,13 @@ $inputAlinearTexto.addEventListener ("input", ( ) =>{
 })
 
 $inputFondoTransparente.addEventListener ("click", ( ) =>{
-   $contenido.style.backgroundImage = `url(${ $inputUrl.value })`;
+    $h1Texto.classList.toggle("transparente");
+    $h1SegundoTexto.classList.toggle("transparente");
+    $contenido.style.backgroundImage = `url(${ $inputUrl.value })`;
+    $imagen.classList.toggle ("ocultar");
+    $contenido.style.display = "flex";
+    $contenido.style.flexDirection = "column";  
+    $contenido.style.justifyContent = "space-between";
    
  })
 
@@ -107,7 +108,17 @@ $inputTamañoLinea.addEventListener ("input", ( ) =>{
     $h1SegundoTexto.style.height =`${$inputTamañoLinea.value}px`;
 })
 
+
+
+
 // EVENTOS DE IMAGEN:
+
+$inputUrl.addEventListener ("input", (e) => {
+    $imagen.src = e.target.value;
+    $imagen.style.maxWidth = "100%"; 
+    $imagen.style.maxHeight = "100%"; 
+    $imagen.style.objectFit = "cover"; })
+
 $inputBrillo.addEventListener("input", () => {
     const aux = $contenido.style.filter ;
     $contenido.style.filter = `brightness(${$inputBrillo.value})`;
@@ -157,6 +168,8 @@ $inputNegativo.addEventListener("input", () => {
 
 // RESTABLECER VALORES DE IMAGEN Y TEXTO:
 function restablecerValoresImagen() {
+    $inputUrl.value = ""
+    $imagen.src = ""
     $inputBrillo.value = 1;
     $contenido.style.filter = `brightness(1)`;
     $inputOpacidad.value = 1;
@@ -178,6 +191,7 @@ function restablecerValoresImagen() {
 }
 
 function restablecerValoresTexto (){
+
     $inputTextoSuperior.value ="Escribi texto superior"  
     $h1Texto.innerText ="Escribi texto superior"
     $inputTextoInferior.value ="Escribir texto inferior"  
@@ -191,9 +205,9 @@ function restablecerValoresTexto (){
     $h1Texto.style.fontFamily =`Arial, Helvetica, sans-serif`   
     $inputUrl.value =``   
     $imagen.src = ``   
-    $inputTamañoFuente.value =`15px`   
-    $h1Texto.style.fontSize =`15px`   
-    $h1SegundoTexto.style.fontSize =`15px`   
+    $inputTamañoFuente.value =`12px`   
+    $h1Texto.style.fontSize =`12px`   
+    $h1SegundoTexto.style.fontSize =`12px`   
     $inputColorTexto.value =`black`   
     $cardTexto.style.color = `black`  
     $inputColorFondo.value =`gray`   
