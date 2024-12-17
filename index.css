@@ -50,7 +50,7 @@ header .header-button {
 }
 
 main{
-    width: 80vw;
+    width: 70vw;
     height: 60vh;
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@ main .meme{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 60px;
+    margin-top: 60px;
 }
 main .meme .texto-arriba{
     height: auto;
@@ -109,7 +109,7 @@ main button{
     align-items: center;
     position: relative;
     left:0;
-    top: 10px;
+    top: 35px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
@@ -122,11 +122,11 @@ main button #botonDescargarMeme{
     position: absolute;
     top:600px;
     right: 0;
-    padding: 15px;
-    width: 320px;
+    padding: 0px;
+    width: 100%;
     box-sizing: border-box; 
     height: 600px;
-    padding: 15px;
+    padding: 30px;
     }
 
 .edito-de-meme .form-contenedor{
@@ -136,13 +136,13 @@ main button #botonDescargarMeme{
 }
 .edito-de-meme .form-contenedor .contenido-imagen{
     margin:1px;
-    padding: 5px;
-    height: 12px;
+    padding: 0px;
+    height: 10px;
 }
 #cerrarAside{
     position: relative;
     top: 1px;
-    left: 260px;
+    left: 240px;
     background-color: rgb(155, 155, 220);
 }
 #cerrarAsideTexto{
@@ -157,11 +157,12 @@ main button #botonDescargarMeme{
     position: absolute;
     top:600px;
     right: 0;
-    padding: 20px;
-    width: 320px;
+    padding: 30px;
+    width: 100%;
     box-sizing: border-box; 
     height: fit-content;
     min-height: 650px ;
+    
 }
 
 .colorAside{
@@ -179,6 +180,12 @@ main button #botonDescargarMeme{
     background-color: rgb(229, 208, 106);
     margin: 20px;
     width: 100px;
+    height: 30px;
+}
+.restablecerValoresTexto{
+    background-color: rgb(229, 208, 106);
+    margin: 20px;
+    width: 120px;
     height: 30px;
 }
 /* CLASES PARA MODO OSCURO Y CLARO (AÑADIDAS CON JS EN LOS ELEMENTOS): */
@@ -242,6 +249,7 @@ main button #botonDescargarMeme{
     
     }   
     main .imagen-meme{
+        width: 100%;
         
     }
     main .texto-arriba{
@@ -263,8 +271,8 @@ main button #botonDescargarMeme{
         justify-content: center;
         align-items: center;
         position: relative;
-        top: -80px;
-        left: -40px;
+        top: 50px;
+        left: -70px;
     }
 
     #editorTexto{
@@ -297,13 +305,13 @@ main button #botonDescargarMeme{
     #cerrarAside{
         position: relative;
         top: 1px;
-        left: 150px;
+        left: 130px;
         background-color: rgb(155, 155, 220);
     }
     #cerrarAsideTexto{
         position: relative;
         top: 1px;
-        left: 150px;
+        left: 130px;
         width: 30px;
         background-color: rgb(155, 155, 220);
     }

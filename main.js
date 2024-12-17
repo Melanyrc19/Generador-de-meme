@@ -144,28 +144,28 @@ window.onload = ( ) =>{
     
     $inputDesenfoque.addEventListener("input", () => {
         const aux = $contenido.style.filter;
-        $contenido.style.filter = `${aux} blur(${ $inputDesenfoque.value }px)`;
+        $contenido.style.filter = `${aux} blur(${ $inputDesenfoque.value}px)`;
     });
     
     $inputEscalaDeGrises.addEventListener("input", () => {
         const aux = $contenido.style.filter;
-        $contenido.style.filter = `${aux}  grayscale(${ $inputEscalaDeGrises.valu }%)`;
+        $contenido.style.filter = `${aux}  grayscale(${ $inputEscalaDeGrises.value}%)`;
     });
     
     $inputSepia.addEventListener("input", () => {
         const aux = $contenido.style.filter;
-        $contenido.style.filter = `${aux} sepia(${ $inputSepia.value }%)`;
+        $contenido.style.filter = `${aux} sepia(${ $inputSepia.value}%)`;
     });
     
     
     $inputHue.addEventListener("input", () => {
         const aux = $contenido.style.filter;
-        $contenido.style.filter = ` ${aux} hue-rotate(${ $inputHue.value }deg)`;
+        $contenido.style.filter = ` ${aux} hue-rotate(${ $inputHue.value}deg)`;
     });
     
     $inputSaturado.addEventListener("input", () => {
         const aux = $contenido.style.filter;
-        $contenido.style.filter = ` ${aux} saturate(${ $inputSaturado.value}%)`;
+        $contenido.style.filter = `${aux} saturate(${$inputSaturado.value}%)`;
     });
     
     $inputNegativo.addEventListener("input", () => {
