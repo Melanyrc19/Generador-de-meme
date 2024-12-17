@@ -2,7 +2,7 @@ function $(element) {
     return document.querySelector (element)
 }
 
-// aqui empienzan las funciones de los inputs
+// VARIABLES DE INPUT TEXTO
 const $inputTextoSuperior = $("#textoSuperior")
 const $inputTextoInferior = $("#textoInferior")
 const $sinTexto1 = $("#sinTextoSuperior")
@@ -19,14 +19,26 @@ const $inputPading = $("#padingTexto")
 const $inputTamañoLinea = $("#tamañoLinea")
 const $inputFondoTransparente = $("#fondoTransparente")
 
+// VARIABLES DE INPUT IMAGEN
+const $inputOpacidad = $("#inputOpacidad")
+const $inputContraste= $("#inputContraste")
+const $inputDesenfoque = $("#inputDesenfoque")
+const $inputEscalaDeGrises = $("#inputEscalaDeGrises")
+const $inputSepia = $("#inputSepia")
+const $inputHue = $("#inputHue")
+const $inputSaturado = $("#inputSaturado")
+const $inputNegativo = $("#inputNegativo")
+const $inputBrillo = $("#inputBrillo");
+const $contenido =$ ("#card"); 
 
 
-
+// VARIABLES DE EN DONDE SE VAN A APLICAR LOS EVENTOS
 const $h1Texto = $("#primerTexto")
 const $h1SegundoTexto = $("#segundoTexto")
 const $imagen = $("#imagenMeme");
 const $cardTexto = $("#card")
 
+// EVENTOS DEL TEXTO:
 $inputTextoSuperior.addEventListener ("input", (e)  => {
     $h1Texto.innerText = e.target.value
 })
@@ -85,8 +97,6 @@ $inputFondoTransparente.addEventListener ("click", ( ) =>{
    $contenido.style.backgroundImage = `url(${ $inputUrl.value })`;
    
  })
-// const $inputPading = $("#padingTexto")
-// const $inputTamañoLinea = $("#tamañoLinea")
 
 $inputPading.addEventListener ("input", ( ) =>{ 
     $h1Texto.style.padding = `${$inputPading.value}px`;
@@ -97,23 +107,7 @@ $inputTamañoLinea.addEventListener ("input", ( ) =>{
     $h1SegundoTexto.style.height =`${$inputTamañoLinea.value}px`;
 })
 
-
-// EVENTOS DE TEXTO:
-
-const $inputOpacidad = $("#inputOpacidad")
-const $inputContraste= $("#inputContraste")
-const $inputDesenfoque = $("#inputDesenfoque")
-const $inputEscalaDeGrises = $("#inputEscalaDeGrises")
-const $inputSepia = $("#inputSepia")
-const $inputHue = $("#inputHue")
-const $inputSaturado = $("#inputSaturado")
-const $inputNegativo = $("#inputNegativo")
-const $inputBrillo = $("#inputBrillo");
-const $contenido =$ ("#card"); 
-
-
-
-
+// EVENTOS DE IMAGEN:
 $inputBrillo.addEventListener("input", () => {
     const aux = $contenido.style.filter ;
     $contenido.style.filter = `brightness(${$inputBrillo.value})`;
@@ -160,6 +154,8 @@ $inputNegativo.addEventListener("input", () => {
     $contenido.style.filter = `${aux} invert(${ $inputNegativo.value})`;
 });
 
+
+// RESTABLECER VALORES DE IMAGEN Y TEXTO:
 function restablecerValoresImagen() {
     $inputBrillo.value = 1;
     $contenido.style.filter = `brightness(1)`;
@@ -214,15 +210,16 @@ function restablecerValoresTexto (){
 
 
 }
+// EJECUCION DE FUNCION:
 restablecerValoresImagen ();
 restablecerValoresTexto();
 
+// CREACION DE VARIABLES QUE VINCULAN A LOS BOTONES PARA REESTABLECER VALORES
 const $restablecerImagen = $(".restablecerValoresImagen");
 const $restablecerTexto = $(".restablecerValoresTexto");
-
+// LE AGREGO EL EVENTO CLICK CON UNA FUNCION A LA CONSTANTE DEL BOTON
 $restablecerImagen.addEventListener("click", restablecerValoresImagen);
 $restablecerTexto.addEventListener("click", restablecerValoresTexto);
-
 
 
 
@@ -233,7 +230,7 @@ const $buttonImagen = $("#botonImagen")
 const $editorDeTexto = $("#editorTexto")
 const $editorDeImagen = $("#editorImagen")
 
-//   probar boton que cambie menu:
+//   probar boton que el cambie menu:
 
 $buttonImagen.addEventListener ("click", (e) =>{
     $editorDeImagen.style.display = "block";
@@ -244,7 +241,8 @@ $buttonTexto.addEventListener ("click", (e) =>{
     $editorDeImagen.style.display = "none";
 
 })
-// modo claro y oscuro:
+// MODO CLARO Y OSCURO
+// DECLARACION DE CONSTANTES:
 
 const $modoOscuro = $(".modoOscuro");
 const $modoOscuroHeader = $(".modoOscuroHeader");
@@ -256,7 +254,7 @@ const $header = $("header")
 const $modoOscuroAside = $(".modoOscuroAside")
 const $aside= $("aside")
 
-
+// FUNCION PARA CAMBIO DE MODO 
 function $cambioModoClaroOscuro () { 
     $body.classList.toggle("modoOscuro");
     $header.classList.toggle("modoOscuroHeader");
@@ -268,19 +266,19 @@ function $cambioModoClaroOscuro () {
         $botonFondo.innerText = "Modo Claro";
     }
  }
+//  EVENTO CLICK DEL BOTON AGREGANDOLE LA FUNCION
 $botonFondo.addEventListener("click", $cambioModoClaroOscuro);
 
 
 
-  
+//   DESCARGAR MEME:
+
 const $botonDescargarMeme= $("#botonDescargarMeme")
 
 $botonDescargarMeme.addEventListener ("click", () => {
     domtoimage.toBlob($contenido).then((blob) => {
         saveAs(blob, "my-meme.png");
-    }) 
-    // .catch((error) => {console.log(error)})
-    ;
+    });
 })
 
 
@@ -290,8 +288,20 @@ $botonDescargarMeme.addEventListener ("click", () => {
 
 
     // cosas que faltan: imagenes/iconos de botones
-    // terminar todos los items y hacer que no se sobre-escriban al ponerlos
-    // boton: reestablecer funciones?
-    // ordenar js en funciones y ejecuciones
+    // ITEM TRANSPARENCIA
+    //  HTML, MAIN
     // que el responsibe este bien en tamaño emobile, table y compu.
-    // boton descargar meme
+    // ORGANIZAR CSS
+
+
+    // boton: reestablecer funciones? V
+     // boton descargar meme V
+
+
+
+
+
+
+    // ordenar js en funciones y ejecuciones 
+ 
+   

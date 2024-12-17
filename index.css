@@ -25,7 +25,7 @@ header h1{
     align-items: center;
     font-size: 20px;
 }
-.header-button {
+header .header-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,6 +118,20 @@ main button #botonDescargarMeme{
     min-height: 650px ;
     }
 
+.edito-de-meme .form-contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-size: 13px;
+}
+.edito-de-meme .form-contenedor .contenido-imagen{
+    margin:1px;
+    padding: 1px;
+    height: 12px;
+}
+
+
 #editorTexto{
     position: absolute;
     top:600px;
@@ -128,26 +142,19 @@ main button #botonDescargarMeme{
     height: fit-content;
     min-height: 650px ;
 }
+
 .colorAside{
     background-color: rgb(223, 220, 220);
     color: hsl(0, 0%, 0%);
 }
-.editor-texto-contenido{
+
+.colorAside .editor-texto-contenido{
     margin: 5px 0;
     text-align: start;
 }
-.contenido-imagen{
-    margin:1px;
-    padding: 1px;
-    height: 12px;
-}
-.form-contenedor{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    font-size: 13px;
-}
+ 
+/* CLASES PARA MODO OSCURO Y CLARO (AÑADIDAS CON JS EN LOS ELEMENTOS): */
+
 .modoOscuro{
     background-color: rgb(12, 36, 49);
     color: white;
@@ -168,30 +175,30 @@ main button #botonDescargarMeme{
  } 
 
 @media (min-width: 768px){
-  .sectionArriba{
-    height: 80%;
-  }
-  header{
-    height: 100px;
-  }
-   header h1{
+    .sectionArriba{
+        height: 80%;
+    }
+    header{
+        height: 100px;
+    }
+    header h1{
         font-size: 35px;
     }
-   header .header-button {
-         margin: 10px;
-         justify-content: center;
-         align-items: center;
+    header .header-button {
+        margin: 10px;
+        justify-content: center;
+        align-items: center;
     }
     header .header-button  button{
         font-size: 20px;
     }
 
     main{
-    width: 400px;
-    height: 70vh;
-    margin: 40px 0 70px 0px;
-    position: relative;
-    right: 60px;
+       width: 400px;
+       height: 70vh;
+       margin: 40px 0 70px 0px;
+       position: relative;
+       right: 60px;
     }   
     main .imagen-meme{
         max-height: 300px;
@@ -216,7 +223,7 @@ main button #botonDescargarMeme{
         align-items: center;
         position: relative;
         top: 50px;
-        }
+    }
 
     #editorTexto{
         position: absolute;
@@ -230,7 +237,7 @@ main button #botonDescargarMeme{
         flex-direction: column ;
         justify-content: center;
         align-self: center;
-        }
+    }
 
     #editorImagen{
         position: absolute;
@@ -244,11 +251,11 @@ main button #botonDescargarMeme{
         flex-direction: column ;
         justify-content: center;
         align-self: center;
-        }
+    }
     .contenido-imagen{
         margin: 5px 0;
         text-align: center;
-        }        
+    }        
 }
 @media (min-width: 1024px){
 
