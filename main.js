@@ -200,11 +200,11 @@ function restablecerValoresTexto (){
     $h1SegundoTexto.innerText = "Escribir texto inferior"  
     $sinTexto1.value =`block`   
     $h1Texto.style.display =`block`    
-    $sinTexto2.value.display =`block`  
+    $sinTexto2.value=`block`  
     $h1SegundoTexto.style.display =`block`
     $inputFuente.value =`Arial, Helvetica, sans-serif`   
     $h1Texto.style.fontFamily = `Arial, Helvetica, sans-serif`  
-    $h1Texto.style.fontFamily =`Arial, Helvetica, sans-serif`   
+    $h1SegundoTexto.style.fontFamily =`Arial, Helvetica, sans-serif`   
     $inputUrl.value =``   
     $imagen.src = ``   
     $inputTamañoFuente.value =`12px`   
@@ -223,6 +223,8 @@ function restablecerValoresTexto (){
     $inputTamañoLinea.value =`5px`
     $h1Texto.style.height = `5px`
     $h1SegundoTexto.style.height = `5px`
+    $h1Texto.classList.remove("transparente")
+    $h1SegundoTexto.classList.remove("transparente")
 
 
 }
