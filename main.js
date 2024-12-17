@@ -116,57 +116,58 @@ const $contenido =$ ("#card");
 
 $inputBrillo.addEventListener("input", () => {
     const aux = $contenido.style.filter ;
-    $contenido.style.filter = `brightness(${ $inputBrillo.value })`;
+    $contenido.style.filter = `brightness(${$inputBrillo.value})`;
 });
 
 $inputOpacidad.addEventListener("input", () => {
     const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux} opacity(${ $inputOpacidad.value })`;
+    $contenido.style.filter = `${aux} opacity(${$inputOpacidad.value})`;
 });
 
 $inputContraste.addEventListener("input", () => {
     const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux}  contrast(${ $inputContraste.value })`;
+    $contenido.style.filter = `${aux} contrast(${$inputContraste.value} %)`;
 });
 
 $inputDesenfoque.addEventListener("input", () => {
     const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux} blur(${ $inputDesenfoque.value })`;
+    $contenido.style.filter = `${aux} blur(${ $inputDesenfoque.value }px)`;
 });
 
 $inputEscalaDeGrises.addEventListener("input", () => {
     const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux}  grayscale(${ $inputEscalaDeGrises.value })`;
+    $contenido.style.filter = `${aux}  grayscale(${ $inputEscalaDeGrises.valu }%)`;
 });
 
 $inputSepia.addEventListener("input", () => {
     const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux} sepia(${ $inputSepia.value })`;
+    $contenido.style.filter = `${aux} sepia(${ $inputSepia.value }%)`;
 });
+
 
 $inputHue.addEventListener("input", () => {
     const aux = $contenido.style.filter;
-    $contenido.style.filter = ` ${aux} hue-rotation(${ $inputHue.value })`;
+    $contenido.style.filter = ` ${aux} hue-rotate(${ $inputHue.value }deg)`;
 });
 
 $inputSaturado.addEventListener("input", () => {
     const aux = $contenido.style.filter;
-    $contenido.style.filter = ` ${aux} saturation(${ $inputSaturado.value })`;
+    $contenido.style.filter = ` ${aux} saturate(${ $inputSaturado.value}%)`;
 });
 
 $inputNegativo.addEventListener("input", () => {
     const aux = $contenido.style.filter;
-    $contenido.style.filter = `${aux} invert(${ $inputNegativo.value })`;
+    $contenido.style.filter = `${aux} invert(${ $inputNegativo.value})`;
 });
 
-function restablecerValores() {
+function restablecerValoresImagen() {
     $inputBrillo.value = 1;
     $contenido.style.filter = `brightness(1)`;
     $inputOpacidad.value = 1;
     $contenido.style.filter = `opacity(1)`;
-    $inputContraste.value = 100;
+    $inputContraste.value = "100%";
     $contenido.style.filter = `contrast(100%)`
-    $inputDesenfoque.value = 0;
+    $inputDesenfoque.value = "0px";
     $contenido.style.filter = `blur(0px)`
     $inputEscalaDeGrises.value = 0;
     $contenido.style.filter = ` grayscale(0%)`
@@ -174,18 +175,20 @@ function restablecerValores() {
      $contenido.style.filter = ` sepia(0%)`
     $inputHue.value = 0;
     $contenido.style.filter = ` hue-rotation(0deg) `
-    $inputSaturado.value = 100;
+    $inputSaturado.value = "100%";
     $contenido.style.filter = ` saturate(100%)`
     $inputNegativo.value = 1;
     $contenido.style.filter = `invert(0)`
+}
 
+function restablecerValoresTexto (){
     $inputTextoSuperior.value ="Escribi texto superior"  
     $h1Texto.innerText ="Escribi texto superior"
     $inputTextoInferior.value ="Escribir texto inferior"  
     $h1SegundoTexto.innerText = "Escribir texto inferior"  
     $sinTexto1.value =`block`   
     $h1Texto.style.display =`block`    
-    $sinTexto2.value =`display:block`  
+    $sinTexto2.value.display =`block`  
     $h1SegundoTexto.style.display =`block`
     $inputFuente.value =`Arial, Helvetica, sans-serif`   
     $h1Texto.style.fontFamily = `Arial, Helvetica, sans-serif`  
@@ -197,19 +200,28 @@ function restablecerValores() {
     $h1SegundoTexto.style.fontSize =`15px`   
     $inputColorTexto.value =`black`   
     $cardTexto.style.color = `black`  
-    $inputColorFondo.value =`gray`   ;
+    $inputColorFondo.value =`gray`   
     $h1Texto.style.backgroundColor =`gray`   
     $h1SegundoTexto.style.backgroundColor =`gray`   
     $inputAlinearTexto.value =`center`   
-    $cardTexto.style.textAlign = `center`  
+    $cardTexto.style.textAlign = `center` 
+    $inputPading.value = `30px`
+    $h1Texto.style.padding = `30px`
+    $h1SegundoTexto.style.padding =`30px`
+    $inputTamañoLinea.value =`5px`
+    $h1Texto.style.height = `5px`
+    $h1SegundoTexto.style.height = `5px`
+
 
 }
-restablecerValores ();
+restablecerValoresImagen ();
+restablecerValoresTexto();
 
-const $restablecer = $(".restablecerValoresMeme");
+const $restablecerImagen = $(".restablecerValoresImagen");
+const $restablecerTexto = $(".restablecerValoresTexto");
 
-$restablecer.addEventListener("click", restablecerValores);
-
+$restablecerImagen.addEventListener("click", restablecerValoresImagen);
+$restablecerTexto.addEventListener("click", restablecerValoresTexto);
 
 
 
@@ -264,10 +276,18 @@ $botonFondo.addEventListener("click", $cambioModoClaroOscuro);
 const $botonDescargarMeme= $("#botonDescargarMeme")
 
 $botonDescargarMeme.addEventListener ("click", () => {
-    domtoimage.toBlob ($).then((blob) => {
+    domtoimage.toBlob($contenido).then((blob) => {
         saveAs(blob, "my-meme.png");
-    })
+    }) 
+    // .catch((error) => {console.log(error)})
+    ;
 })
+
+
+
+
+
+
 
     // cosas que faltan: imagenes/iconos de botones
     // terminar todos los items y hacer que no se sobre-escriban al ponerlos

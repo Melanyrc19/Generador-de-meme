@@ -130,7 +130,7 @@ main button #botonDescargarMeme{
 }
 .colorAside{
     background-color: rgb(223, 220, 220);
-    color: rgb(0, 0, 0);
+    color: hsl(0, 0%, 0%);
 }
 .editor-texto-contenido{
     margin: 5px 0;
